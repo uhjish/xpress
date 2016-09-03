@@ -1,0 +1,75 @@
+<navbar></navbar>
+<section class="cysect" layout="row" layout-align="center center">
+  <section layout="row">
+		<section layout="column">
+    <div layout="row">
+      <md-menu class="md-primary md-border-bottom">
+        <md-button aria-label="Add element" class="md-button md-primary md-border-bottom" ng-click="vm.openMenu($mdOpenMenu, $event)">
+          ADD
+        </md-button>
+        <md-menu-content width="4">
+          <md-menu-item>
+            <md-button ng-click="ctrl.redial($event)">
+              <md-icon md-svg-icon="call:dialpad" md-menu-align-target></md-icon>
+              Node
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="vm.addEdge($event)">
+              <md-icon md-svg-icon="call:voicemail"></md-icon>
+              Edge
+            </md-button>
+          </md-menu-item>
+          <md-menu-divider></md-menu-divider>
+          <md-menu-item>
+            <md-button ng-click="vm.addPolicy($event)">
+              Policy
+            </md-button>
+          </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+      <md-menu>
+       <md-button aria-label="Change Layout" class="md-button md-primary md-border-bottom" ng-click="vm.openMenu($mdOpenMenu, $event)">
+          LAYOUT
+        </md-button>
+        <md-menu-content>
+          <md-menu-item>
+            <md-button ng-click="vm.updateGraph({name: 'dagre'})">
+              Dagre
+            </md-button>
+          </md-menu-item>
+          <md-menu-item>
+            <md-button ng-click="vm.updateGraph({name: 'breadthfirst'})">
+              Breadthfirst
+            </md-button>
+          </md-menu-item>
+				</md-menu-content>
+			</md-menu>
+    <md-button class="md-button md-primary md-border-bottom" ng-click="vm.showSelected = !vm.showSelected">Details</md-button>
+      <md-menu>
+        <md-button class="md-button md-primary md-border-bottom" ng-click="vm.openMenu($mdOpenMenu, $event)">Composition</md-button>
+        <md-menu-content>
+        <md-menu-item ng-repeat="id in vm.graphlist">
+            <md-button ng-click="vm.loadGraph(id)">
+              {{id}}
+            </md-button>
+        </md-menu-item>
+        </md-menu-content>
+      </md-menu>
+    <md-button class="md-button md-raised md-primary md-border-bottom" ng-click="vm.showSelected = !vm.showSelected">Update</md-button>
+    <md-button class="md-button md-raised md-primary md-border-bottom" ng-click="vm.showSelected = !vm.showSelected">Delete</md-button>
+    </div>
+    <cytoscape
+      id="topo"
+      graph-elements="vm.graphelements"
+      graph-layout="vm.graphlayout"
+      graph-style="vm.graphstyle">
+    </cytoscape>
+    <div class="jsonView" ng-show="vm.showSelected">
+      <json child="vm._Graph.getSelected()" default-collapsed="true" type="object"></json>
+    </div>
+    <button class="md-button md-primary md-border-bottom" ng-show="vm.showSelected" ng-click="vm.save()">Save</button>
+		</section>
+  </section>
+</section>
+

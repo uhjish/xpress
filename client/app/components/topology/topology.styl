@@ -1,0 +1,288 @@
+
+.topology
+  background white
+  color red
+
+.cysect
+  width 100%
+  height 100%
+  display inline-block
+
+.ngCytoscape
+  height 400px
+  width 700px
+  display inline-block
+
+.ctrl-md-panel
+  background white
+  border-radius 0px
+  min-height 500px
+  max-height 1000px
+  width 28%
+  display inline-block
+
+.ctrl-md-panel-content
+  padding 0 15px
+  width 100%
+
+.inspector
+  max-height 300px
+  width 100%
+  overflow scroll
+	font-size 16
+
+div[ux-jsonview]
+    /* prevent user selection */
+    -moz-user-select -moz-none
+    -khtml-user-select none
+    -webkit-user-select none
+    -ms-user-select none
+    user-select none
+
+    font-family Tahoma
+    font-size 13px
+    color #555
+    text-decoration none
+
+
+div[ux-jsonview] ul
+    margin 0
+    padding 0
+    list-style none
+    border none
+    overflow hidden
+
+
+div[ux-jsonview] li
+    position relative
+    padding 0 0 0 10px
+    line-height 20px
+
+
+div[ux-jsonview] li .expanded
+    padding 0px 6px
+    background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAV/QAAFf0BzXBRYQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAADlSURBVCiRvZIxaocwGMVfmoJkiUOCegGHzKJXcKi7Jyjd6rFa9/4v8D+GQgulqxIH0QRMOjmIdHDpN73h+8F7j0e897hyD5e+/wV43EXbtn5ZFlBKsecihGDbNjDGUNc1OQDTNN36vn8KguAAGGOQpunHyVKWZY1SCs45MMbAGINzDkop5HnenIBhGD6FEC+ccxhjYK1FGIZeSvk8juPXKUNZlt5ae9daD13XCQBIkmSoqupOKfW7zUNLWusuz/N3KSWklCiK4m2e5/7PWqMocuu6vsZx/BPH8bcQouGcH6ZArk7jF6nvX3fgAEFHAAAAAElFTkSuQmCC')
+    background-repeat no-repeat
+
+
+div[ux-jsonview] li .collapsed
+    padding 0px 6px
+    background-image url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAABHNCSVQICAgIfAhkiAAAAAlwSFlzAAAV/QAAFf0BzXBRYQAAABx0RVh0U29mdHdhcmUAQWRvYmUgRmlyZXdvcmtzIENTNui8sowAAADoSURBVCiRnZIxS4ZQFIbfm4EoXKcL4tQk4ajD/QduRj8iaAt/S3OrEM7f5lqzq6BSOUuCw73icDlNCZF9YGc6w3l4n3M4jIhwpC4OTf8HuPxuyrKkeZ5PUsp8HMePNE13XbeEZVnQdd1NXddvy7LcGWOuh2FgfwKWZcG2bfR9j6ZpnoqieNVaP1ZV9QPalIgIRATXdaGUQtu2YpqmB9/3bwFcnV363Km3BMYYGGPQWsPzPAqC4FNK+SyEyHcBYwzWdUUURRBC3GdZ9qKUajnntAs4joMwDE9JkuRxHL8TETjnv5TY0df4AnOVYW77ZRmlAAAAAElFTkSuQmCC')
+    background-repeat no-repeat
+
+
+div[ux-jsonview] li .normal
+    padding 0px 6px
+    background-repeat no-repeat
+
+
+div[ux-jsonview] li i, div[ux-jsonview] li
+    cursor default
+
+
+div[ux-jsonview] li .selected
+    background-color #efefef
+    -webkit-border-radius 10px
+    -moz-border-radius 10px
+    border-radius 10px
+
+
+.jsonTree
+    font-family Arial, sans-serif
+    font-size 12px
+
+
+.node
+    display inline-block
+    padding 0px 6px
+
+
+.node-label
+    color #8e44ad
+
+
+.node-string
+    color red
+
+
+.node-bool
+    color #3498db
+
+
+.node-number
+    font-style italic
+
+
+
+#mainView {
+    margin: 30px auto;
+    width: 700px;
+}
+#jsonTextarea {
+    width: 700px;
+    height: 300px;
+}
+.red {
+    color: red;
+}
+
+
+/* JSON VIEW */
+
+/* striped background */
+.jsonView {
+    background-color: #f3f6fa;
+    background-image: linear-gradient(rgba(255, 255, 255, 1) 50%, transparent 50%, transparent);
+    background-size: 60px 60px;
+    padding: 30px 0 0 5px;
+    background-attachment: local;
+}
+/* inputs */
+.jsonView select.form-control {
+    margin: 0;
+    padding: 0;
+}
+.jsonView select.form-control, .jsonView input.form-control {
+    width: 100px;
+    display: inline;
+    height: 29px;
+    padding-left: 5px;
+}
+.jsonView input[type="text"] {
+    margin: 0;
+    border: 0;
+    background: none;
+}
+.jsonView input[type="checkbox"] {
+    position: absolute;
+}
+.jsonView input.keyinput {
+    font-weight: bold;
+}
+.jsonView input {
+    height: 30px;
+    margin: 0;
+    padding: 0;
+}
+.jsonView input[type="text"].addItemKeyInput, .jsonView input[type="text"].addItemValueInput {
+    border: 1px solid #ccc;
+    background: white;
+    margin-left: 0;
+}
+.jsonView .addItemKeyInput {
+    font-weight: bold;
+}
+
+/* chevrons */
+.jsonView .glyphicon-chevron-right, .jsonView .glyphicon-chevron-down {
+    float: left;
+    cursor: pointer;
+    position: relative;
+    top: 7px;
+    right: 22px;
+    margin-right: -15px;
+}
+.jsonView > json > .glyphicon-chevron-down {
+    display: none;
+}
+/* add and delete */
+.jsonView .addObjectItemBtn {
+    background-color: transparent;
+    border-color: transparent;
+    padding: 0;
+    border: 0;
+    height: 30px;
+    display: block;
+}
+.jsonView .addObjectItemBtn i {
+    display: block;
+}
+.jsonView .deleteKeyBtn, .jsonView .moveArrayItemBtn {
+    float: right;
+    margin-right: 10px;
+    position: relative;
+    top: 7px;
+    z-index: 99999999999999;
+    cursor: pointer;
+}
+
+/* basic layout */
+.jsonView .jsonObjectKey {
+    font-weight: bold;
+}
+.jsonContents {
+    margin-left: 25px;
+}
+.jsonView .block {
+    display: block;
+}
+.jsonView .jsonItemDesc {
+    font-family: Georgia, serif;
+    color: grey;
+    font-style: italic;
+    cursor: default;
+    line-height: 30px
+}
+.jsonView .objectDesc {
+    cursor: default;
+}
+/* first brace */
+.jsonView > json > .jsonItemDesc {
+    display: block;
+    float: left;
+    position: relative;
+    bottom: 25px;
+    height: 0;
+    width: 0;
+}
+
+/* array numbering */
+.jsonView ol.arrayOl {
+    margin: 0;
+    padding-left: 25px;
+}
+.jsonView ol.arrayOl > li > span > span > json > .glyphicon-chevron-down,
+.jsonView ol.arrayOl > li > span > span > json > .glyphicon-chevron-right {
+    left: -40px;
+}
+.jsonView ol.arrayOl li {
+    color: grey;
+    font-style: italic;
+    font-family: Georgia, serif;
+    list-style-type: decimal;
+    min-height: 30px;
+}
+.jsonView ol.arrayOl li.arrayItem > span > span > .glyphicon-chevron-right, .jsonView ol.arrayOl li.arrayItem > span > span > .glyphicon-chevron-down {
+    right: 30px;
+}
+.jsonView ol.arrayOl li input, .jsonView li select, .jsonView li button {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: normal;
+}
+.jsonView ol.arrayOl li *:not(.btn):not(.jsonItemDesc) {
+    color: black;
+}
+
+.jsonView li li {
+    list-style-type: lower-roman;
+}
+.jsonView li li li {
+    list-style-type: upper-roman;
+}
+.jsonView li li li li {
+    list-style-type: lower-latin;
+}
+.jsonView li li li li li {
+    list-style-type: upper-latin;
+}
+.jsonView li li li li li li {
+    list-style-type: lower-greek;
+}
+.jsonView li li li li li li li {
+    list-style-type: decimal;
+}
+.sortable-placeholder {
+    height: 20px;
+    display: block;
+}
+.ace_editor { height: 200px; }

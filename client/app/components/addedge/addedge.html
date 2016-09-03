@@ -1,0 +1,37 @@
+<md-dialog ng-cloak>
+  <form>
+    <md-toolbar>
+      <div class="md-toolbar-tools">
+        <h2>Add Edge</h2>
+        <span flex></span>
+        <md-button class="md-icon-button" ng-click="cancel()">
+          <md-icon md-svg-src="img/icons/ic_close_24px.svg" aria-label="Close dialog"></md-icon>
+        </md-button>
+      </div>
+    </md-toolbar>
+  <md-dialog-content>
+    <md-input-container layout="row">
+      <label>Source</label>
+      <md-select ng-model="vm.source" style="margin-right: 10px;">
+        <md-option ng-repeat="id in vm.nodelist" value="{{id}}">{{id}}</md-option>
+      </md-select>
+    </md-input-container>
+    <md-input-container layout="row">
+      <label>Target</label>
+      <md-select ng-model="vm.target" style="margin-right: 10px;">
+        <md-option ng-repeat="id in vm.nodelist" value="{{id}}">{{id}}</md-option>
+      </md-select>
+    </md-input-container>
+  </md-dialog-content>
+    <md-dialog-actions layout="row">
+      <span flex></span>
+      <md-button ng-click="cancel()">
+       Cancel
+      </md-button>
+      <md-button ng-click="vm.validate()">
+       Save
+      </md-button>
+    </md-dialog-actions>
+  </form>
+</md-dialog>
+

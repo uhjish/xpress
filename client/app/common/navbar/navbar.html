@@ -1,0 +1,22 @@
+<div>
+  <md-toolbar style="height:40px; min-height:40px;" layout="row" layout-align="center center">
+    <section flex layout="column" layout-align="center center"></section>
+    <a ui-sref="app.login"><button class="md-button md-border-bottom acme-navbar-text">LOGIN</button></a>
+    <md-button class="acme-navbar-text" ng-click="vm.logout()">LOGOUT</md-button>
+  </md-toolbar>
+
+  <section class="mhp-nav-bar" layout="row" layout-align="center center" layout-wrap>
+    <section flex layout="column" layout-align="left center">
+      <a ui-sref="main.home"><img class="mhp-pearl-logo" height="80" ng-src="assets/images/sceptre.png" alt="Monark UI">
+      </a>
+    </section>
+
+    <section flex layout="column" layout-align="right center"></section>
+    <md-menu-bar>
+      <a ui-sref="topology"><button class="md-button md-warn md-border-bottom">Topology</button></a>
+      <a ui-sref="drilldown"><button class="md-button md-warn md-border-bottom">Drilldown</button></a>
+      <a ui-sref="about"><button class="md-button md-warn md-border-bottom">About</button></a>
+    </md-menu-bar>
+    <!-- TODO: turn this into a button group and use css selectors to show bottom border on "selected" button -->
+  </section>
+</div>
